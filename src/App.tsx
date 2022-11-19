@@ -2,7 +2,7 @@ import {} from "./store";
 import { JSX } from "solid-js/jsx-runtime";
 import "./App.scss";
 import { createClient } from "@supabase/supabase-js";
-import { createResource } from "solid-js";
+import { createResource, createSignal, onMount } from "solid-js";
 
 const supabase = createClient(
   "https://fmlovqieocwjaghmavax.supabase.co",
@@ -11,9 +11,11 @@ const supabase = createClient(
 
 const App = () => {
   const content = [1, 2, 3, 4, 5, 5, 3, 2, 1, 3];
-  const [data] = createResource(() =>
-    fetch("https://www.sushi.com/earn/api/bar")
+  const [data] = createResource( 1, async ()=>
+    await (await fetch("https://tidus-icon-api.herokuapp.com/api/utils/xsushiapr")).json()
   );
+
+
   return <div><pre>{JSON.stringify(data())}</pre></div>;
 };
 
