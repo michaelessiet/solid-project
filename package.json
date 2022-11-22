@@ -2,11 +2,14 @@
   "name": "vite-template-solid",
   "version": "0.0.0",
   "description": "",
+  "homepage": "http://{github-username}.github.io/{repo-name}",
   "scripts": {
     "start": "vite",
     "dev": "vite",
     "build": "vite build",
-    "serve": "vite preview"
+    "serve": "vite preview",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "license": "MIT",
   "devDependencies": {
@@ -17,6 +20,7 @@
     "autoprefixer": "^10.4.12",
     "eslint": "^8.26.0",
     "eslint-plugin-solid": "^0.7.4",
+    "gh-pages": "^4.0.0",
     "just-merge": "^3.1.1",
     "less": "^4.1.3",
     "postcss": "^8.4.17",
