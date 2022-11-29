@@ -4,7 +4,7 @@
   "description": "",
   "homepage": "http://{github-username}.github.io/{repo-name}",
   "scripts": {
-    "start": "vite --host",
+    "start": "npx http-server ./dist",
     "dev": "vite",
     "build": "vite build",
     "serve": "vite preview",
